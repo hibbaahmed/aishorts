@@ -49,9 +49,7 @@ export default function GenerationType() {
     onSuccess: async (data) => {
       if (data?.valid) {
         const uuidVal = uuidv4();
-        await fetch("/api/create", {
-          method: "POST",
-          body: JSON.stringify({
+        const body = {
             userId: dbUser.data?.user?.id,
             topic: brainrot.title,
             agent1: brainrot?.agents[0]?.name ?? "JORDAN_PETERSON",
